@@ -29,8 +29,8 @@
         body {
             background-color: #f8fafc;
             color: #334155;
-            overflow-x: hidden;
-            min-height: 100vh;
+            overflow: hidden; /* Sayfa kaydırmasını engelle */
+            height: 100vh;    /* Ekran yüksekliğine sabitle */
             display: flex;
             flex-direction: column;
         }
@@ -54,6 +54,7 @@
             overflow: hidden;
             line-height: 0;
             z-index: 0;
+            pointer-events: none; /* Tıklamaları engellememesi için */
         }
 
         .wave-container svg {
@@ -61,6 +62,13 @@
             display: block;
             width: calc(100% + 1.3px);
             height: 150px;
+        }
+
+        /* Mobilde dalgayı biraz küçültelim ki içerik sığsın */
+        @media (max-width: 768px) {
+            .wave-container svg {
+                height: 100px;
+            }
         }
 
         .shape-fill {
@@ -89,64 +97,65 @@
 <body class="relative">
 
     <!-- Ana İçerik -->
-    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 relative z-10 w-full max-w-5xl mx-auto text-center">
+    <!-- Padding ve boşluklar optimize edildi -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-2 relative z-10 w-full max-w-5xl mx-auto text-center h-full">
         
         <!-- Logo Alanı -->
-        <div class="mb-8 relative logo-float fade-in-up">
+        <div class="mb-4 md:mb-8 relative logo-float fade-in-up">
             <div class="absolute -inset-4 bg-orange-100 rounded-full blur-xl opacity-50 z-0"></div>
             <img src="özgüvenweb.png" 
                  onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex'"
                  alt="Özel Özgüven Logo" 
-                 class="relative z-10 w-48 sm:w-56 md:w-64 h-auto object-contain mx-auto drop-shadow-xl">
+                 class="relative z-10 w-32 sm:w-48 md:w-64 h-auto object-contain mx-auto drop-shadow-xl">
             
             <!-- Logo Yüklenmezse Gösterilecek Alan -->
-            <div id="placeholder" class="hidden relative z-10 w-48 h-48 bg-white rounded-full items-center justify-center shadow-lg mx-auto text-brand-orange">
+            <div id="placeholder" class="hidden relative z-10 w-32 h-32 md:w-48 md:h-48 bg-white rounded-full items-center justify-center shadow-lg mx-auto text-brand-orange">
                 <i class="fas fa-child fa-4x"></i>
             </div>
         </div>
 
         <!-- Başlıklar -->
-        <div class="space-y-4 mb-10 fade-in-up delay-100">
-            <span class="inline-block px-4 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold tracking-wide uppercase border border-orange-200">
+        <div class="space-y-2 md:space-y-4 mb-6 md:mb-10 fade-in-up delay-100">
+            <span class="inline-block px-3 py-1 md:px-4 md:py-1 rounded-full bg-orange-100 text-orange-600 text-xs md:text-sm font-semibold tracking-wide uppercase border border-orange-200">
                 Web Sitemiz Oluşturuluyor
             </span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
                 Özel Özgüven <br>
                 <span class="text-brand-orange">Eğitim ve Rehabilitasyon Merkezi</span>
             </h1>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p class="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto hidden sm:block">
                 Eğitimde kalite ve güvenin adresi olarak, sizlere daha iyi hizmet verebilmek için dijital yüzümüzü oluşturuyoruz.
             </p>
         </div>
 
         <!-- Geri Sayım Kutuları (Clean Style) -->
-        <div class="grid grid-cols-4 gap-3 sm:gap-6 mb-12 fade-in-up delay-200 w-full max-w-3xl">
+        <div class="grid grid-cols-4 gap-2 sm:gap-6 mb-6 md:mb-12 fade-in-up delay-200 w-full max-w-3xl">
             <!-- Gün -->
-            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-400">
-                <div id="days" class="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
-                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1">Gün</div>
+            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg p-2 md:p-6 border-b-4 border-orange-400">
+                <div id="days" class="text-xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
+                <div class="text-[10px] sm:text-sm font-medium text-gray-400 uppercase mt-1">Gün</div>
             </div>
             <!-- Saat -->
-            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-400">
-                <div id="hours" class="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
-                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1">Saat</div>
+            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg p-2 md:p-6 border-b-4 border-orange-400">
+                <div id="hours" class="text-xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
+                <div class="text-[10px] sm:text-sm font-medium text-gray-400 uppercase mt-1">Saat</div>
             </div>
             <!-- Dakika -->
-            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-400">
-                <div id="minutes" class="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
-                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1">Dakika</div>
+            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg p-2 md:p-6 border-b-4 border-orange-400">
+                <div id="minutes" class="text-xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
+                <div class="text-[10px] sm:text-sm font-medium text-gray-400 uppercase mt-1">Dakika</div>
             </div>
             <!-- Saniye -->
-            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-500 relative overflow-hidden">
+            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg p-2 md:p-6 border-b-4 border-orange-500 relative overflow-hidden">
                 <div class="absolute inset-0 bg-orange-50 opacity-20"></div>
-                <div id="seconds" class="text-2xl sm:text-4xl md:text-5xl font-bold text-orange-500 relative z-10">00</div>
-                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1 relative z-10">Saniye</div>
+                <div id="seconds" class="text-xl sm:text-4xl md:text-5xl font-bold text-orange-500 relative z-10">00</div>
+                <div class="text-[10px] sm:text-sm font-medium text-gray-400 uppercase mt-1 relative z-10">Saniye</div>
             </div>
         </div>
 
         <!-- İletişim Butonu -->
-        <div class="fade-in-up delay-300">
-            <a href="mailto:info@ozguvenegitim.com" class="group inline-flex items-center gap-3 bg-gray-800 text-white px-8 py-3.5 rounded-full text-lg font-medium hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/30">
+        <div class="fade-in-up delay-300 mb-8 md:mb-0">
+            <a href="mailto:info@ozguvenegitim.com" class="group inline-flex items-center gap-2 md:gap-3 bg-gray-800 text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm md:text-lg font-medium hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/30">
                 <i class="far fa-envelope group-hover:rotate-12 transition-transform"></i>
                 <span>Bize Ulaşın</span>
             </a>
@@ -155,7 +164,7 @@
     </main>
 
     <!-- Footer ve Dalga Efekti -->
-    <footer class="relative mt-auto w-full">
+    <footer class="relative mt-auto w-full flex-shrink-0">
         <!-- Dalga SVG -->
         <div class="wave-container">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -166,13 +175,13 @@
         </div>
 
         <!-- Footer İçeriği -->
-        <div class="bg-orange-500 py-6 px-4 relative z-10">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between text-white gap-4">
+        <div class="bg-orange-500 py-4 md:py-6 px-4 relative z-10">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between text-white gap-2 md:gap-4">
                 
                 <!-- Bayındır Medya İmza -->
-                <div class="text-sm md:text-base font-light text-orange-100 flex flex-wrap justify-center md:justify-start gap-1 items-center text-center">
+                <div class="text-xs md:text-base font-light text-orange-100 flex flex-wrap justify-center md:justify-start gap-1 items-center text-center">
                     <span>Bu işletmenin dijital dönüşümü</span>
-                    <a href="https://bayindirmedya.com" target="_blank" class="font-bold text-white hover:text-gray-800 transition-colors flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full">
+                    <a href="https://bayindirmedya.com" target="_blank" class="font-bold text-white hover:text-gray-800 transition-colors flex items-center gap-2 bg-white/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">
                         <i class="fas fa-layer-group text-xs"></i> Bayındır Medya
                     </a>
                     <span>tarafından yapılmaktadır.</span>
@@ -180,11 +189,11 @@
 
                 <!-- Sosyal Medya -->
                 <div class="flex items-center gap-4">
-                    <a href="https://instagram.com/bayindirmedya" target="_blank" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-110">
-                        <i class="fab fa-instagram text-xl"></i>
+                    <a href="https://instagram.com/bayindirmedya" target="_blank" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram text-lg md:text-xl"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-110">
-                        <i class="fab fa-facebook-f text-lg"></i>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook-f text-base md:text-lg"></i>
                     </a>
                 </div>
             </div>
