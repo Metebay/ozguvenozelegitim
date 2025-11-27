@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çok Yakında - Bayındır Medya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            color: white;
+        }
+
+        /* Arka Plan Hareketli Işıklar */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 10s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: #4f46e5; /* Indigo */
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: #ec4899; /* Pink */
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 250px;
+            height: 250px;
+            background: #0ea5e9; /* Sky Blue */
+            top: 40%;
+            left: 60%;
+            animation: float2 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        @keyframes float2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-40px, 60px) rotate(20deg); }
+        }
+
+        /* Glassmorphism Kartı */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Geri Sayım Kutuları */
+        .timer-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Alt Bilgi Barı */
+        .footer-bar {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover Animasyonları */
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col justify-between relative">
+
+    <!-- Hareketli Arka Plan -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Ana İçerik Alanı -->
+    <div class="flex-grow flex items-center justify-center relative z-10 px-4">
+        
+        <div class="glass-card p-8 md:p-12 rounded-3xl text-center max-w-2xl w-full mx-4">
+            
+            <div class="inline-block px-4 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-medium mb-6 animate-pulse">
+                YAPIM AŞAMASINDA
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                ÇOK YAKINDA
+            </h1>
+            
+            <p class="text-gray-300 text-lg md:text-xl mb-10 font-light">
+                Web sitemizi yeniliyoruz. Size daha iyi hizmet verebilmek için çalışıyoruz.
+            </p>
+
+            <!-- Geri Sayım Sayacı -->
+            <div class="grid grid-cols-4 gap-2 md:gap-4 mb-10">
+                <div class="timer-box rounded-xl p-3 md:p-4">
+                    <div id="days" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider">Gün</div>
+                </div>
+                <div class="timer-box rounded-xl p-3 md:p-4">
+                    <div id="hours" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider">Saat</div>
+                </div>
+                <div class="timer-box rounded-xl p-3 md:p-4">
+                    <div id="minutes" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider">Dakika</div>
+                </div>
+                <div class="timer-box rounded-xl p-3 md:p-4">
+                    <div id="seconds" class="text-2xl md:text-4xl font-bold text-pink-500">00</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider">Saniye</div>
+                </div>
+            </div>
+
+            <!-- Bildirim Butonu (Opsiyonel) -->
+            <a href="mailto:info@bayindirmedya.com" class="inline-flex items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors">
+                <i class="far fa-envelope"></i> Bize Ulaşın
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Alt Bilgi / Footer -->
+    <div class="footer-bar relative z-10 py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        
+        <div class="text-gray-400 text-sm flex flex-col md:flex-row items-center gap-2">
+            <span>Site Tasarımı & Geliştirme:</span>
+            <a href="https://bayindirmedya.com" target="_blank" class="flex items-center gap-2 text-white font-semibold hover:text-indigo-400 transition-colors">
+                <i class="fas fa-layer-group"></i> Bayındır Medya
+            </a>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <span class="text-gray-500 text-xs uppercase tracking-widest hidden md:block">Bizi Takip Edin</span>
+            <a href="https://instagram.com/bayindirmedya" target="_blank" class="social-link text-white hover:text-pink-500 text-2xl">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link text-white hover:text-blue-400 text-2xl">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link text-white hover:text-blue-600 text-2xl">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Geri Sayım Mantığı
+        // Örnek olarak 14 gün sonrasına ayarladım
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 14); 
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // İlk yüklemede çalıştır
+    </script>
+</body>
+</html>
