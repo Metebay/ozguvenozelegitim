@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Çok Yakında - Bayındır Medya</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -11,136 +11,136 @@
         body {
             font-family: 'Outfit', sans-serif;
             margin: 0;
-            overflow: hidden;
             background-color: #000;
             color: white;
+            /* Mobilde dikey scroll'a izin ver ama yatay taşmayı engelle */
+            overflow-x: hidden;
+            min-height: 100vh;
+            /* Mobil tarayıcı çubukları için dinamik yükseklik */
+            min-height: 100dvh;
         }
 
         /* Arka Plan Hareketli Işıklar */
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.6;
+            filter: blur(60px); /* Mobilde performans için blur azaltıldı */
+            opacity: 0.5;
             animation: float 10s infinite alternate ease-in-out;
             z-index: 0;
+            pointer-events: none; /* Tıklamayı engelle */
         }
 
         .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: #4f46e5; /* Indigo */
-            top: -100px;
-            left: -100px;
-            animation-delay: 0s;
+            width: 300px;
+            height: 300px;
+            background: #4f46e5;
+            top: -50px;
+            left: -50px;
         }
 
         .blob-2 {
-            width: 300px;
-            height: 300px;
-            background: #ec4899; /* Pink */
-            bottom: -50px;
-            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: #ec4899;
+            bottom: 0;
+            right: 0;
             animation-delay: -5s;
         }
 
         .blob-3 {
-            width: 250px;
-            height: 250px;
-            background: #0ea5e9; /* Sky Blue */
-            top: 40%;
-            left: 60%;
+            width: 200px;
+            height: 200px;
+            background: #0ea5e9;
+            top: 30%;
+            left: 20%;
             animation: float2 12s infinite alternate ease-in-out;
         }
 
         @keyframes float {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(50px, 50px) scale(1.1); }
+            100% { transform: translate(30px, 30px) scale(1.1); }
         }
 
         @keyframes float2 {
             0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-40px, 60px) rotate(20deg); }
+            100% { transform: translate(-20px, 40px) rotate(20deg); }
         }
 
         /* Glassmorphism Kartı */
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
-        /* Geri Sayım Kutuları */
         .timer-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Alt Bilgi Barı */
         .footer-bar {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Hover Animasyonları */
-        .social-link {
-            transition: all 0.3s ease;
-        }
-        .social-link:hover {
-            transform: translateY(-3px);
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        /* Responsive düzenlemeler */
+        @media (max-width: 640px) {
+            .blob { filter: blur(40px); opacity: 0.4; }
+            .glass-card { backdrop-filter: blur(10px); }
         }
     </style>
 </head>
-<body class="h-screen flex flex-col justify-between relative">
+<body class="flex flex-col relative justify-between">
 
     <!-- Hareketli Arka Plan -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+    <div class="blob blob-3 hidden md:block"></div> <!-- Mobilde 3. blobu gizle -->
 
     <!-- Ana İçerik Alanı -->
-    <div class="flex-grow flex items-center justify-center relative z-10 px-4">
+    <div class="flex-grow flex items-center justify-center relative z-10 p-4 w-full">
         
-        <div class="glass-card p-8 md:p-12 rounded-3xl text-center max-w-2xl w-full mx-4">
+        <div class="glass-card p-6 md:p-12 rounded-2xl md:rounded-3xl text-center w-full max-w-2xl mx-auto my-auto">
             
-            <div class="inline-block px-4 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-medium mb-6 animate-pulse">
+            <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs md:text-sm font-medium mb-4 md:mb-6 animate-pulse">
                 YAPIM AŞAMASINDA
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+            <!-- Başlık: Mobilde text-4xl, Masaüstünde text-7xl -->
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-3 md:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 tracking-tight leading-tight">
                 ÇOK YAKINDA
             </h1>
             
-            <p class="text-gray-300 text-lg md:text-xl mb-10 font-light">
+            <p class="text-gray-300 text-sm sm:text-base md:text-xl mb-8 md:mb-10 font-light px-2">
                 Web sitemizi yeniliyoruz. Size daha iyi hizmet verebilmek için çalışıyoruz.
             </p>
 
             <!-- Geri Sayım Sayacı -->
-            <div class="grid grid-cols-4 gap-2 md:gap-4 mb-10">
-                <div class="timer-box rounded-xl p-3 md:p-4">
-                    <div id="days" class="text-2xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider">Gün</div>
+            <div class="grid grid-cols-4 gap-2 md:gap-4 mb-8 md:mb-10">
+                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
+                    <div id="days" class="text-xl sm:text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Gün</div>
                 </div>
-                <div class="timer-box rounded-xl p-3 md:p-4">
-                    <div id="hours" class="text-2xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider">Saat</div>
+                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
+                    <div id="hours" class="text-xl sm:text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Saat</div>
                 </div>
-                <div class="timer-box rounded-xl p-3 md:p-4">
-                    <div id="minutes" class="text-2xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider">Dakika</div>
+                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
+                    <div id="minutes" class="text-xl sm:text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Dak</div>
                 </div>
-                <div class="timer-box rounded-xl p-3 md:p-4">
-                    <div id="seconds" class="text-2xl md:text-4xl font-bold text-pink-500">00</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider">Saniye</div>
+                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
+                    <div id="seconds" class="text-xl sm:text-2xl md:text-4xl font-bold text-pink-500">00</div>
+                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">San</div>
                 </div>
             </div>
 
-            <!-- Bildirim Butonu (Opsiyonel) -->
-            <a href="mailto:bayindirmedya@gmail.com" class="inline-flex items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors">
+            <!-- Bildirim Butonu -->
+            <a href="mailto:info@bayindirmedya.com" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm md:text-base font-bold hover:bg-gray-200 transition-colors w-full md:w-auto justify-center">
                 <i class="far fa-envelope"></i> Bize Ulaşın
             </a>
 
@@ -148,34 +148,32 @@
     </div>
 
     <!-- Alt Bilgi / Footer -->
-    <div class="footer-bar relative z-10 py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="footer-bar relative z-10 py-4 px-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
         
-        <div class="text-gray-400 text-sm flex flex-col md:flex-row items-center gap-2">
+        <div class="text-gray-400 text-xs md:text-sm flex flex-col md:flex-row items-center gap-1 md:gap-2">
             <span>Site Tasarımı & Geliştirme:</span>
-            <a href="https://bayindirmedya.com.tr" target="_blank" class="flex items-center gap-2 text-white font-semibold hover:text-indigo-400 transition-colors">
+            <a href="https://bayindirmedya.com" target="_blank" class="flex items-center gap-2 text-white font-semibold hover:text-indigo-400 transition-colors">
                 <i class="fas fa-layer-group"></i> Bayındır Medya
             </a>
         </div>
 
-        <div class="flex items-center gap-6">
-            <span class="text-gray-500 text-xs uppercase tracking-widest hidden md:block">Bizi Takip Edin</span>
-            <a href="https://instagram.com/bayindirmedya" target="_blank" class="social-link text-white hover:text-pink-500 text-2xl">
+        <div class="flex items-center gap-6 mt-2 md:mt-0">
+            <a href="https://instagram.com/bayindirmedya" target="_blank" class="social-link text-white hover:text-pink-500 text-xl md:text-2xl" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61573839032365" class="social-link text-white hover:text-blue-400 text-2xl">
-                <i class="fab fa-facebook"></i>
+            <a href="#" class="social-link text-white hover:text-blue-400 text-xl md:text-2xl" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
             </a>
-            <a href="https://www.linkedin.com/in/nurettinmetebayindir/" class="social-link text-white hover:text-blue-600 text-2xl">
+            <a href="#" class="social-link text-white hover:text-blue-600 text-xl md:text-2xl" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
     </div>
 
     <script>
-        // Geri Sayım Mantığı
-        // Örnek olarak 14 gün sonrasına ayarladım
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 14); 
+        // Geri Sayım Mantığı - SABİT TARİH
+        // Hedef: 15 Aralık 2025
+        const targetDate = new Date("December 15, 2025 00:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -201,7 +199,7 @@
         }
 
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // İlk yüklemede çalıştır
+        updateCountdown();
     </script>
 </body>
 </html>
