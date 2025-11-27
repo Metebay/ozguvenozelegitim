@@ -3,190 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Özel Özgüven Eğitim ve Rehabilitasyon Merkezi - Çok Yakında</title>
+    <title>Özel Özgüven Eğitim ve Rehabilitasyon Merkezi - Oluşturuluyor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F59E0B', // Logonuzdaki turuncu tonlarına yakın
+                            dark: '#1e293b',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
-            font-family: 'Outfit', sans-serif;
-            margin: 0;
-            background-color: #000;
-            color: white;
+            background-color: #f8fafc;
+            color: #334155;
             overflow-x: hidden;
             min-height: 100vh;
-            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Arka Plan Hareketli Işıklar */
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.5;
-            animation: float 10s infinite alternate ease-in-out;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .blob-1 {
-            width: 300px;
-            height: 300px;
-            background: #4f46e5;
-            top: -50px;
-            left: -50px;
-        }
-
-        .blob-2 {
-            width: 250px;
-            height: 250px;
-            background: #ec4899;
-            bottom: 0;
-            right: 0;
-            animation-delay: -5s;
-        }
-
-        .blob-3 {
-            width: 200px;
-            height: 200px;
-            background: #0ea5e9;
-            top: 30%;
-            left: 20%;
-            animation: float2 12s infinite alternate ease-in-out;
+        /* Logo Animasyonu: Yumuşak bir süzülme (Float) */
+        .logo-float {
+            animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(30px, 30px) scale(1.1); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
-        @keyframes float2 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-20px, 40px) rotate(20deg); }
+        /* Dalga Animasyonu */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 0;
         }
 
-        /* Glassmorphism Kartı */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
         }
 
-        .timer-box {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .shape-fill {
+            fill: #F59E0B; /* Turuncu Dalga */
         }
 
-        .footer-bar {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        /* Fade In Animasyonları */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        @media (max-width: 640px) {
-            .blob { filter: blur(40px); opacity: 0.4; }
-            .glass-card { backdrop-filter: blur(10px); }
+        .delay-100 { animation-delay: 0.2s; }
+        .delay-200 { animation-delay: 0.4s; }
+        .delay-300 { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
-<body class="flex flex-col relative justify-between">
+<body class="relative">
 
-    <!-- Hareketli Arka Plan -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3 hidden md:block"></div>
-
-    <!-- Ana İçerik Alanı -->
-    <div class="flex-grow flex items-center justify-center relative z-10 p-4 w-full">
+    <!-- Ana İçerik -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 relative z-10 w-full max-w-5xl mx-auto text-center">
         
-        <div class="glass-card p-6 md:p-12 rounded-2xl md:rounded-3xl text-center w-full max-w-4xl mx-auto my-auto">
+        <!-- Logo Alanı -->
+        <div class="mb-8 relative logo-float fade-in-up">
+            <div class="absolute -inset-4 bg-orange-100 rounded-full blur-xl opacity-50 z-0"></div>
+            <img src="özgüvenweb.png" 
+                 onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex'"
+                 alt="Özel Özgüven Logo" 
+                 class="relative z-10 w-48 sm:w-56 md:w-64 h-auto object-contain mx-auto drop-shadow-xl">
             
-            <!-- Logo Alanı -->
-            <div class="mb-6 md:mb-8 flex justify-center">
-                <!-- Eğer resim bulunamazsa yerine ikon gösterir (onerror) -->
-                <img src="özgüvenweb.png" 
-                     onerror="this.style.display='none'; document.getElementById('placeholder-icon').style.display='block';"
-                     alt="Özel Özgüven Logo" 
-                     class="w-32 sm:w-40 md:w-48 h-auto object-contain drop-shadow-2xl rounded-xl animate-pulse">
-                
-                <!-- Resim Yüklenmezse Görünecek Placeholder -->
-                <div id="placeholder-icon" style="display:none;" class="text-orange-500">
-                    <i class="fas fa-sun fa-4x animate-spin-slow"></i>
-                </div>
+            <!-- Logo Yüklenmezse Gösterilecek Alan -->
+            <div id="placeholder" class="hidden relative z-10 w-48 h-48 bg-white rounded-full items-center justify-center shadow-lg mx-auto text-brand-orange">
+                <i class="fas fa-child fa-4x"></i>
             </div>
+        </div>
 
-            <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs md:text-sm font-medium mb-4 md:mb-6 animate-pulse">
-                YAPIM AŞAMASINDA
-            </div>
-
-            <!-- Kurum İsmi -->
-            <h1 class="font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 leading-tight">
-                <span class="block text-3xl sm:text-5xl md:text-6xl mb-1 sm:mb-2">ÖZEL ÖZGÜVEN</span>
-                <span class="block text-xl sm:text-3xl md:text-4xl font-semibold text-gray-300">EĞİTİM VE REHABİLİTASYON MERKEZİ</span>
+        <!-- Başlıklar -->
+        <div class="space-y-4 mb-10 fade-in-up delay-100">
+            <span class="inline-block px-4 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold tracking-wide uppercase border border-orange-200">
+                Web Sitemiz Oluşturuluyor
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                Özel Özgüven <br>
+                <span class="text-brand-orange">Eğitim ve Rehabilitasyon Merkezi</span>
             </h1>
-            
-            <p class="text-gray-400 text-sm sm:text-base md:text-xl mt-4 mb-8 md:mb-10 font-light px-2 max-w-2xl mx-auto">
-                Web sitemiz yapım aşamasındadır. Çok yakında hizmetinizdeyiz.
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                Eğitimde kalite ve güvenin adresi olarak, sizlere daha iyi hizmet verebilmek için dijital yüzümüzü oluşturuyoruz.
             </p>
+        </div>
 
-            <!-- Geri Sayım Sayacı -->
-            <div class="grid grid-cols-4 gap-2 md:gap-4 mb-8 md:mb-10 max-w-2xl mx-auto">
-                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
-                    <div id="days" class="text-xl sm:text-2xl md:text-4xl font-bold">00</div>
-                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Gün</div>
+        <!-- Geri Sayım Kutuları (Clean Style) -->
+        <div class="grid grid-cols-4 gap-3 sm:gap-6 mb-12 fade-in-up delay-200 w-full max-w-3xl">
+            <!-- Gün -->
+            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-400">
+                <div id="days" class="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
+                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1">Gün</div>
+            </div>
+            <!-- Saat -->
+            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-400">
+                <div id="hours" class="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
+                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1">Saat</div>
+            </div>
+            <!-- Dakika -->
+            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-400">
+                <div id="minutes" class="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800">00</div>
+                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1">Dakika</div>
+            </div>
+            <!-- Saniye -->
+            <div class="bg-white rounded-2xl shadow-lg p-3 sm:p-6 border-b-4 border-orange-500 relative overflow-hidden">
+                <div class="absolute inset-0 bg-orange-50 opacity-20"></div>
+                <div id="seconds" class="text-2xl sm:text-4xl md:text-5xl font-bold text-orange-500 relative z-10">00</div>
+                <div class="text-xs sm:text-sm font-medium text-gray-400 uppercase mt-1 relative z-10">Saniye</div>
+            </div>
+        </div>
+
+        <!-- İletişim Butonu -->
+        <div class="fade-in-up delay-300">
+            <a href="mailto:info@ozguvenegitim.com" class="group inline-flex items-center gap-3 bg-gray-800 text-white px-8 py-3.5 rounded-full text-lg font-medium hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/30">
+                <i class="far fa-envelope group-hover:rotate-12 transition-transform"></i>
+                <span>Bize Ulaşın</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer ve Dalga Efekti -->
+    <footer class="relative mt-auto w-full">
+        <!-- Dalga SVG -->
+        <div class="wave-container">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" fill-opacity="0.1"></path>
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- Footer İçeriği -->
+        <div class="bg-orange-500 py-6 px-4 relative z-10">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between text-white gap-4">
+                
+                <!-- Bayındır Medya İmza -->
+                <div class="text-sm md:text-base font-light text-orange-100 flex flex-wrap justify-center md:justify-start gap-1 items-center text-center">
+                    <span>Bu işletmenin dijital dönüşümü</span>
+                    <a href="https://bayindirmedya.com" target="_blank" class="font-bold text-white hover:text-gray-800 transition-colors flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full">
+                        <i class="fas fa-layer-group text-xs"></i> Bayındır Medya
+                    </a>
+                    <span>tarafından yapılmaktadır.</span>
                 </div>
-                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
-                    <div id="hours" class="text-xl sm:text-2xl md:text-4xl font-bold">00</div>
-                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Saat</div>
-                </div>
-                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
-                    <div id="minutes" class="text-xl sm:text-2xl md:text-4xl font-bold">00</div>
-                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Dak</div>
-                </div>
-                <div class="timer-box rounded-lg md:rounded-xl p-2 md:p-4">
-                    <div id="seconds" class="text-xl sm:text-2xl md:text-4xl font-bold text-pink-500">00</div>
-                    <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">San</div>
+
+                <!-- Sosyal Medya -->
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/bayindirmedya" target="_blank" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
                 </div>
             </div>
-
-            <!-- İletişim Butonu -->
-            <a href="mailto:info@ozguvenegitim.com" class="inline-flex items-center gap-2 bg-white text-black px-8 py-3 rounded-full text-sm md:text-base font-bold hover:bg-gray-200 transition-colors shadow-lg hover:shadow-white/20">
-                <i class="far fa-envelope"></i> Bize Ulaşın
-            </a>
-
         </div>
-    </div>
-
-    <!-- Alt Bilgi / Footer -->
-    <div class="footer-bar relative z-10 py-4 px-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-        
-        <!-- Güncellenen Bayındır Medya Yazısı -->
-        <div class="text-gray-400 text-xs md:text-sm flex flex-col md:flex-row items-center gap-1 flex-wrap justify-center md:justify-start">
-            <span>Bu işletmenin dijital dönüşümü</span>
-            <a href="https://bayindirmedya.com" target="_blank" class="flex items-center gap-1 text-white font-semibold hover:text-indigo-400 transition-colors">
-                 Bayındır Medya
-            </a>
-            <span>tarafından yapılmaktadır.</span>
-        </div>
-
-        <div class="flex items-center gap-6 mt-2 md:mt-0">
-            <a href="https://instagram.com/bayindirmedya" target="_blank" class="social-link text-white hover:text-pink-500 text-xl md:text-2xl" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-link text-white hover:text-blue-400 text-xl md:text-2xl" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link text-white hover:text-blue-600 text-xl md:text-2xl" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </div>
+    </footer>
 
     <script>
-        // Geri Sayım Mantığı - SABİT TARİH
-        // Hedef: 15 Aralık 2025
+        // SABİT TARİH GERİ SAYIM (15 Aralık 2025)
         const targetDate = new Date("December 15, 2025 00:00:00").getTime();
 
         function updateCountdown() {
@@ -194,6 +200,7 @@
             const distance = targetDate - now;
 
             if (distance < 0) {
+                // Süre dolduysa hepsini 0 yap
                 document.getElementById("days").innerText = "00";
                 document.getElementById("hours").innerText = "00";
                 document.getElementById("minutes").innerText = "00";
@@ -206,6 +213,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            // Sayıları güncelle (Tek haneli ise başına 0 ekle)
             document.getElementById("days").innerText = days < 10 ? "0" + days : days;
             document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
             document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
