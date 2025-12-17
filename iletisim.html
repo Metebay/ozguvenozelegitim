@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Özgüven Özel Eğitim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }</style>
+</head>
+<body class="bg-stone-50 flex flex-col min-h-screen">
+    
+    <header id="main-header" class="bg-white shadow-md sticky top-0 z-50"></header>
+
+    <div class="bg-[#3d2715] text-white py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold">İletişim</h1>
+            <div class="text-sm text-stone-400 mt-2">Anasayfa / İletişim</div>
+        </div>
+    </div>
+
+    <main class="flex-grow container mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Sol: İletişim Bilgileri & Harita -->
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded shadow-sm border-l-4 border-orange-600">
+                    <h2 class="text-xl font-bold text-[#3d2715] mb-6">İletişim Bilgileri</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-stone-100 p-3 rounded text-orange-600"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-stone-600 uppercase">Adres</h4>
+                                <p class="text-[#3d2715] mt-1">Merkez Mah. Eğitim Cad. No:1<br>Bağcılar / İstanbul</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-stone-100 p-3 rounded text-orange-600"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-stone-600 uppercase">Telefon</h4>
+                                <p class="text-[#3d2715] mt-1">0 (212) 555 00 00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-stone-100 p-3 rounded text-orange-600"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-stone-600 uppercase">E-Posta</h4>
+                                <p class="text-[#3d2715] mt-1">bilgi@ozguvenegitim.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Harita Placeholder -->
+                <div class="bg-stone-200 h-64 rounded shadow-inner flex items-center justify-center text-stone-400 border border-stone-300">
+                    <div class="text-center">
+                        <i data-lucide="map" class="w-12 h-12 mx-auto mb-2 opacity-50"></i>
+                        <span class="font-bold">Google Maps Alanı</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ: İletişim Formu -->
+            <div class="bg-white p-8 rounded shadow-lg border-t-4 border-[#3d2715]">
+                <h2 class="text-2xl font-bold text-[#3d2715] mb-2">Bize Ulaşın</h2>
+                <p class="text-stone-500 mb-8 text-sm">Formu doldurun, en kısa sürede sizinle iletişime geçelim.</p>
+                
+                <form onsubmit="handleContact(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-stone-700 mb-2">Adınız Soyadınız</label>
+                        <input id="contact-name" type="text" class="w-full p-3 bg-stone-50 border border-stone-300 rounded focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-stone-700 mb-2">Telefon Numaranız</label>
+                        <input id="contact-phone" type="tel" class="w-full p-3 bg-stone-50 border border-stone-300 rounded focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-stone-700 mb-2">Mesajınız</label>
+                        <textarea id="contact-message" rows="5" class="w-full p-3 bg-stone-50 border border-stone-300 rounded focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 rounded font-bold transition shadow-lg uppercase tracking-wider text-sm">Mesajı Gönder</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer" class="bg-[#3d2715] mt-auto"></footer>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
