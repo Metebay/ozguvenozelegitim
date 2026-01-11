@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özgüven Özel Eğitim ve Rehabilitasyon Merkezi</title>
+    <title>Ana Sayfa - Özgüven Özel Eğitim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,19 +18,17 @@
     <header id="main-header" class="sticky top-0 z-50"></header>
 
     <main class="flex-grow">
-        <!-- HERO SECTION (Canlı Gradient) -->
+        <!-- HERO SECTION -->
         <section class="relative min-h-[600px] flex items-center overflow-hidden py-16 lg:py-0">
-            <!-- Arka Plan Görseli ve Canlı Maske -->
             <div class="absolute inset-0">
                 <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
-                <!-- Soluk kahverengi yerine canlı Turuncu-Kırmızı Gradient -->
-                <div class="absolute inset-0 bg-gradient-to-r from-orange-600/95 via-orange-500/90 to-red-500/80"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-orange-600/95 via-red-600/90 to-red-600/80"></div>
             </div>
             
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-3xl animate-fade-in-up">
                     <div class="inline-flex items-center gap-2 bg-white text-orange-600 px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-lg uppercase tracking-wider">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i> Bağcılar'ın Güvenilir Eğitim Kurumu
+                        <i data-lucide="star" class="w-4 h-4 fill-current text-yellow-400"></i> Bağcılar'ın Güvenilir Eğitim Kurumu
                     </div>
                     
                     <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-sm">
@@ -43,10 +41,10 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="iletisim.html" class="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 px-8 py-4 rounded-xl font-bold transition shadow-xl flex items-center justify-center gap-2 text-lg border-2 border-transparent">
-                            Hemen Başvurun <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        <a href="iletisim.html" class="bg-white text-orange-600 hover:bg-yellow-50 px-8 py-4 rounded-xl font-bold transition shadow-xl flex items-center justify-center gap-2 text-lg group">
+                            Hemen Başvurun <i data-lucide="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="kurumsal.html" class="bg-transparent hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition border-2 border-white text-center flex items-center justify-center gap-2">
+                        <a href="kurumsal.html" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition border-2 border-white/30 text-center flex items-center justify-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5"></i> Tanıtım Videomuz
                         </a>
                     </div>
@@ -54,187 +52,128 @@
             </div>
         </section>
 
-        <!-- NEDEN BİZİ TERCİH ETMELİSİNİZ? (Beyaz Kart, Canlı İkonlar) -->
-        <section class="relative z-20 -mt-8 container mx-auto px-4 mb-20">
-            <div class="bg-white rounded-2xl shadow-xl border-t-4 border-orange-500 p-6 md:p-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Özellik 1 -->
+        <!-- NEDEN BİZİ TERCİH ETMELİSİNİZ? -->
+        <section class="relative z-20 -mt-10 container mx-auto px-4 mb-20">
+            <div class="bg-white rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
-                            <i data-lucide="users" class="w-8 h-8"></i>
+                        <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
+                            <i data-lucide="users" class="w-10 h-10"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Uzman Kadro</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">Alanında deneyimli, sertifikalı ve güler yüzlü eğitmenler.</p>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Uzman Kadro</h3>
+                        <p class="text-gray-500 leading-relaxed">Alanında deneyimli, sertifikalı ve güler yüzlü eğitmenler.</p>
                     </div>
-                    <!-- Özellik 2 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
-                            <i data-lucide="bus" class="w-8 h-8"></i>
+                        <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
+                            <i data-lucide="bus" class="w-10 h-10"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Ücretsiz Servis</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">Evden okula, okuldan eve güvenli ve ücretsiz ulaşım imkanı.</p>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Ücretsiz Servis</h3>
+                        <p class="text-gray-500 leading-relaxed">Evden okula, okuldan eve güvenli ve ücretsiz ulaşım imkanı.</p>
                     </div>
-                    <!-- Özellik 3 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
-                            <i data-lucide="smile" class="w-8 h-8"></i>
+                        <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
+                            <i data-lucide="smile" class="w-10 h-10"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Oyun Alanları</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">Çocukların sosyalleşebileceği güvenli ve eğlenceli oyun parkları.</p>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Oyun Alanları</h3>
+                        <p class="text-gray-500 leading-relaxed">Çocukların sosyalleşebileceği güvenli ve eğlenceli oyun parkları.</p>
                     </div>
-                    <!-- Özellik 4 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
-                            <i data-lucide="target" class="w-8 h-8"></i>
+                        <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-white transition-all duration-300 shadow-sm transform group-hover:scale-110">
+                            <i data-lucide="target" class="w-10 h-10"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Bireysel Eğitim</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">Her öğrencinin ihtiyacına özel olarak hazırlanan gelişim programları.</p>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Bireysel Eğitim</h3>
+                        <p class="text-gray-500 leading-relaxed">Her öğrencinin ihtiyacına özel olarak hazırlanan gelişim programları.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- HİZMETLERİMİZ -->
-        <section class="py-16 bg-orange-50/50 relative">
+        <section class="py-20 bg-gray-50 relative overflow-hidden" id="hizmetler">
             <div class="container mx-auto px-4 relative z-10">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                    <div class="max-w-2xl">
-                        <span class="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Eğitim & Terapi</span>
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Hizmetlerimiz</h2>
-                        <p class="text-gray-500 mt-4 text-lg">Kurumumuzda uygulanan bilimsel temelli eğitim ve terapi yöntemleri.</p>
-                    </div>
-                    <a href="iletisim.html" class="hidden md:flex items-center gap-2 font-bold text-orange-600 hover:text-orange-700 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow transition">
-                        Tümünü Gör <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <span class="text-orange-600 font-bold tracking-widest uppercase text-sm mb-3 block">Eğitim & Terapi</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">Hizmetlerimiz</h2>
+                    <p class="text-gray-500 text-lg leading-relaxed">Kurumumuzda uygulanan bilimsel temelli eğitim ve terapi yöntemleri ile çocuklarımızın geleceğine ışık tutuyoruz.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Kart 1: Fizik Tedavi -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-orange-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Kart 1 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group cursor-pointer" onclick="goToServiceDetail('fizik-tedavi')">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                             <i data-lucide="activity" class="w-7 h-7"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Fizik Tedavi</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Kas iskelet sistemi bozukluklarında fonksiyonel kapasiteyi artırmaya yönelik modern tedavi.</p>
-                        <a href="iletisim.html" class="text-sm font-bold text-gray-400 group-hover:text-orange-600 flex items-center gap-1 transition-colors">Detaylar <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Fizik Tedavi</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Kas iskelet sistemi bozukluklarında fonksiyonel kapasiteyi artırmaya yönelik modern tedavi.</p>
+                        <span class="inline-flex items-center text-orange-600 font-bold group-hover:text-orange-700 transition">Detaylı Bilgi <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
                     
-                    <!-- Kart 2: Duyu Bütünleme -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                    <!-- Kart 2 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group cursor-pointer" onclick="goToServiceDetail('duyu-butunleme')">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                             <i data-lucide="puzzle" class="w-7 h-7"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">Duyu Bütünleme</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Çocuğun vücudunu ve çevresini etkili bir şekilde kullanmasını sağlayan özel terapi.</p>
-                        <a href="iletisim.html" class="text-sm font-bold text-gray-400 group-hover:text-blue-600 flex items-center gap-1 transition-colors">Detaylar <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Duyu Bütünleme</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Çocuğun vücudunu ve çevresini etkili bir şekilde kullanmasını sağlayan özel terapi.</p>
+                        <span class="inline-flex items-center text-orange-600 font-bold group-hover:text-orange-700 transition">Detaylı Bilgi <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
 
-                    <!-- Kart 3: Uzay Terapi -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-purple-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-purple-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                    <!-- Kart 3 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group cursor-pointer" onclick="goToServiceDetail('uzay-terapi')">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                             <i data-lucide="rocket" class="w-7 h-7"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-600 transition-colors">Uzay Terapi</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Yerçekimine karşı vücut direncini artırarak denge ve koordinasyonu geliştiren yöntem.</p>
-                        <a href="iletisim.html" class="text-sm font-bold text-gray-400 group-hover:text-purple-600 flex items-center gap-1 transition-colors">Detaylar <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Uzay Terapi</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Yerçekimine karşı vücut direncini artırarak denge ve koordinasyonu geliştiren yöntem.</p>
+                        <span class="inline-flex items-center text-orange-600 font-bold group-hover:text-orange-700 transition">Detaylı Bilgi <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
 
-                    <!-- Kart 4: Dil Konuşma -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-green-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-green-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                        <div class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                    <!-- Kart 4 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group cursor-pointer" onclick="goToServiceDetail('dil-konusma')">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                             <i data-lucide="mic" class="w-7 h-7"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-green-600 transition-colors">Dil ve Konuşma</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">İletişim, dil ve konuşma bozukluklarının değerlendirilmesi ve terapisi.</p>
-                        <a href="iletisim.html" class="text-sm font-bold text-gray-400 group-hover:text-green-600 flex items-center gap-1 transition-colors">Detaylar <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Dil ve Konuşma</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">İletişim, dil ve konuşma bozukluklarının değerlendirilmesi ve terapisi.</p>
+                        <span class="inline-flex items-center text-orange-600 font-bold group-hover:text-orange-700 transition">Detaylı Bilgi <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
 
-                    <!-- Kart 5: Özel Öğrenme -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                        <div class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                    <!-- Kart 5 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group cursor-pointer" onclick="goToServiceDetail('ozel-ogrenme')">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                             <i data-lucide="brain" class="w-7 h-7"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-red-600 transition-colors">Özel Öğrenme</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Disleksi, disgrafi gibi öğrenme güçlüklerine yönelik akademik destek.</p>
-                        <a href="iletisim.html" class="text-sm font-bold text-gray-400 group-hover:text-red-600 flex items-center gap-1 transition-colors">Detaylar <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Özel Öğrenme</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Disleksi, disgrafi gibi öğrenme güçlüklerine yönelik akademik destek.</p>
+                        <span class="inline-flex items-center text-orange-600 font-bold group-hover:text-orange-700 transition">Detaylı Bilgi <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
 
-                    <!-- Kart 6: Psikolojik -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-yellow-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                        <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                    <!-- Kart 6 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group cursor-pointer" onclick="goToServiceDetail('psikolojik')">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                             <i data-lucide="heart-handshake" class="w-7 h-7"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-yellow-600 transition-colors">Psikolojik Danışmanlık</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Aile ve çocuklara yönelik rehberlik ve psikolojik destek hizmetleri.</p>
-                        <a href="iletisim.html" class="text-sm font-bold text-gray-400 group-hover:text-yellow-600 flex items-center gap-1 transition-colors">Detaylar <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- VELİ YORUMLARI & BLOG ÖZET -->
-        <section class="py-16 md:py-24 bg-white border-t border-gray-100">
-            <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    
-                    <!-- Sol Taraf -->
-                    <div class="relative group">
-                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-orange-200 rounded-full z-0 group-hover:scale-110 transition-transform"></div>
-                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-100 rounded-full z-0 group-hover:scale-110 transition-transform delay-75"></div>
-                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="rounded-3xl shadow-2xl relative z-10 w-full object-cover h-[450px] transform transition hover:scale-[1.01]">
-                        <div class="absolute bottom-8 right-8 bg-white p-6 rounded-2xl shadow-xl z-20 max-w-xs border-l-8 border-orange-500">
-                            <p class="text-gray-900 font-bold text-xl mb-1">Mutlu Çocuklar</p>
-                            <p class="text-gray-500 text-sm">Geleceğe güvenle bakan bireyler yetiştiriyoruz.</p>
-                        </div>
-                    </div>
-
-                    <!-- Sağ Taraf -->
-                    <div>
-                        <span class="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Veli Yorumları</span>
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Ailelerin Güvenini Kazanmak En Büyük Başarımız</h2>
-                        
-                        <div class="space-y-6">
-                            <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:bg-orange-50 transition-colors">
-                                <div class="flex gap-1 text-yellow-400 mb-4">
-                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                                </div>
-                                <p class="text-gray-700 italic text-lg mb-4 leading-relaxed">"Kurumun ilgisi ve öğretmenlerin uzmanlığı sayesinde çocuğumuzda inanılmaz bir gelişim gördük. Ücretsiz servis imkanı da bizim için çok büyük kolaylık."</p>
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-orange-200 rounded-full flex items-center justify-center font-bold text-orange-700">F</div>
-                                    <div class="font-bold text-gray-900 text-sm">Fatma Yılmaz <span class="block text-gray-400 font-normal text-xs">Öğrenci Velisi</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 flex gap-4">
-                            <a href="iletisim.html" class="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition gap-2 shadow-lg">
-                                Sizi Arayalım <i data-lucide="phone-call" class="w-4 h-4"></i>
-                            </a>
-                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">Psikolojik Danışmanlık</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Aile ve çocuklara yönelik rehberlik ve psikolojik destek hizmetleri.</p>
+                        <span class="inline-flex items-center text-orange-600 font-bold group-hover:text-orange-700 transition">Detaylı Bilgi <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section class="py-20 bg-gradient-to-r from-orange-600 to-red-600 relative overflow-hidden">
+        <section class="py-24 bg-gradient-to-r from-orange-600 to-red-600 relative overflow-hidden">
             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
             <div class="container mx-auto px-4 text-center relative z-10 text-white">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Eğitimde Yeni Bir Başlangıç</h2>
-                <p class="text-orange-50 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Eğitimde Yeni Bir Başlangıç</h2>
+                <p class="text-orange-50 mb-10 max-w-2xl mx-auto text-xl leading-relaxed">
                     Çocuğunuzun ihtiyaçlarına en uygun eğitim programını belirlemek için ücretsiz değerlendirme seansımıza davetlisiniz.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <div class="flex flex-col sm:flex-row justify-center gap-5">
                     <a href="iletisim.html" class="bg-white text-orange-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition shadow-2xl transform hover:scale-105">
                         Randevu Al
                     </a>
-                    <a href="tel:02125550000" class="bg-orange-800/50 backdrop-blur-sm text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-900/50 transition border border-white/20 flex items-center justify-center gap-2">
+                    <a href="tel:02125550000" class="bg-black/20 backdrop-blur-sm text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-black/30 transition border border-white/20 flex items-center justify-center gap-2">
                         <i data-lucide="phone" class="w-5 h-5"></i> 0 (212) 555 00 00
                     </a>
                 </div>
