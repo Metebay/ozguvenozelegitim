@@ -6,75 +6,167 @@
     <title>Kurumsal - Özgüven Özel Eğitim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; overflow-x: hidden; }</style>
 </head>
-<body class="bg-stone-50 flex flex-col min-h-screen">
+<body class="bg-gray-50 flex flex-col min-h-screen text-gray-800">
     
     <header id="main-header" class="bg-white shadow-md sticky top-0 z-50"></header>
 
-    <!-- SAYFA BAŞLIĞI (Breadcrumb Style) -->
-    <div class="bg-[#3d2715] text-white py-12">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold">Kurumsal</h1>
-            <div class="text-sm text-stone-400 mt-2 flex gap-2">
-                <a href="index.html" class="hover:text-white">Anasayfa</a> / <span class="text-orange-500">Kurumsal</span>
+    <!-- SAYFA BAŞLIĞI (Canlı Gradient) -->
+    <div class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight">Hakkımızda</h1>
+            <div class="text-base font-medium text-orange-100 flex justify-center gap-3 items-center">
+                <a href="index.html" class="hover:text-white transition border-b border-transparent hover:border-white">Anasayfa</a> 
+                <span class="opacity-50">/</span> 
+                <span class="text-yellow-300 font-bold">Kurumsal</span>
             </div>
         </div>
     </div>
 
-    <main class="flex-grow container mx-auto px-4 py-12">
-        <div class="grid lg:grid-cols-4 gap-10">
-            <!-- Yan Menü (Sidebar) -->
-            <div class="lg:col-span-1">
-                <div class="bg-white p-6 rounded shadow-sm border-t-4 border-orange-600 sticky top-24">
-                    <h3 class="font-bold text-lg mb-4 text-[#3d2715]">Hakkımızda</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="block p-2 bg-orange-50 text-orange-700 font-bold rounded">Genel Bakış</a></li>
-                        <li><a href="#misyon" class="block p-2 text-stone-600 hover:bg-stone-50 hover:text-orange-600 rounded transition">Misyon & Vizyon</a></li>
-                        <li><a href="#kadro" class="block p-2 text-stone-600 hover:bg-stone-50 hover:text-orange-600 rounded transition">Yönetim Kadrosu</a></li>
-                        <li><a href="#belgeler" class="block p-2 text-stone-600 hover:bg-stone-50 hover:text-orange-600 rounded transition">Belgelerimiz</a></li>
+    <main class="flex-grow container mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <!-- Yan Menü (Sidebar) - Sol Taraf -->
+            <div class="lg:col-span-3">
+                <div class="bg-white p-6 rounded-2xl shadow-xl border-t-8 border-orange-500 sticky top-28">
+                    <h3 class="font-bold text-xl mb-6 text-gray-900 border-b border-gray-100 pb-4">Kurumsal</h3>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li>
+                            <a href="#" class="block p-4 bg-orange-50 text-orange-700 font-bold rounded-xl border-l-4 border-orange-500 transition-all hover:translate-x-1 flex items-center gap-3">
+                                <i data-lucide="info" class="w-5 h-5"></i> Genel Bakış
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#misyon" class="block p-4 text-gray-600 hover:bg-gray-50 hover:text-orange-600 rounded-xl transition-all hover:translate-x-1 group flex items-center gap-3">
+                                <i data-lucide="target" class="w-5 h-5 text-gray-400 group-hover:text-orange-500"></i> Misyon & Vizyon
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#kadro" class="block p-4 text-gray-600 hover:bg-gray-50 hover:text-orange-600 rounded-xl transition-all hover:translate-x-1 group flex items-center gap-3">
+                                <i data-lucide="users" class="w-5 h-5 text-gray-400 group-hover:text-orange-500"></i> Yönetim & Kadro
+                            </a>
+                        </li>
+                        <li>
+                            <a href="iletisim.html" class="block p-4 text-gray-600 hover:bg-gray-50 hover:text-orange-600 rounded-xl transition-all hover:translate-x-1 group flex items-center gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-gray-400 group-hover:text-orange-500"></i> İletişim
+                            </a>
+                        </li>
                     </ul>
+                </div>
+                
+                <!-- Hızlı İletişim Widget -->
+                <div class="mt-8 bg-gray-900 text-white p-8 rounded-2xl shadow-xl text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-orange-500/20 rounded-bl-full"></div>
+                    <div class="w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-900/50">
+                        <i data-lucide="phone-call" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-3">Sorularınız mı var?</h4>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Uzmanlarımız size yardımcı olmaktan mutluluk duyacaktır.</p>
+                    <a href="tel:02125550000" class="text-2xl font-bold text-orange-400 hover:text-white transition block">0 (212) 555 00 00</a>
                 </div>
             </div>
 
-            <!-- Ana İçerik -->
-            <div class="lg:col-span-3">
-                <div class="bg-white p-8 rounded shadow-sm mb-8">
-                    <h2 class="text-2xl font-bold text-[#3d2715] mb-6">Kurumumuz Hakkında</h2>
-                    <p class="text-stone-600 leading-relaxed mb-4">
-                        Özgüven Özel Eğitim ve Rehabilitasyon Merkezi, özel gereksinimli bireylerin bağımsız yaşam becerileri kazanması ve toplumsal hayata tam katılımlarını sağlamak amacıyla kurulmuştur. Uzman kadromuz, etik değerlere bağlı kalarak, bilimsel ve kanıta dayalı eğitim yöntemlerini kullanmaktadır.
-                    </p>
-                    <p class="text-stone-600 leading-relaxed">
-                        Fiziksel koşullarımız, çocuklarımızın güvenliği ve konforu düşünülerek tasarlanmıştır. Geniş ve ferah sınıflarımız, bireysel eğitim odalarımız ve terapi salonlarımızla hizmet vermekteyiz.
-                    </p>
-                </div>
-
-                <div id="misyon" class="grid md:grid-cols-2 gap-6 mb-12">
-                    <div class="bg-[#3d2715] text-white p-8 rounded shadow-md">
-                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="target" class="text-orange-500"></i> Misyonumuz</h3>
-                        <p class="text-stone-300 text-sm leading-relaxed">Özel eğitim ihtiyacı olan bireyleri; bedensel, zihinsel, sosyal ve duygusal yönden destekleyerek, potansiyellerini en üst düzeye çıkarmak ve onları hayata hazırlamaktır.</p>
+            <!-- Ana İçerik - Sağ Taraf -->
+            <div class="lg:col-span-9 space-y-20">
+                
+                <!-- BİZ KİMİZ (Görsel + Metin) -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative group">
+                         <!-- Dekoratif Arka Plan -->
+                         <div class="absolute -top-6 -left-6 w-32 h-32 bg-orange-100 rounded-full z-0 group-hover:scale-110 transition-transform duration-500"></div>
+                         <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-yellow-100 rounded-full z-0 group-hover:scale-110 transition-transform duration-500 delay-75"></div>
+                         
+                         <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b955?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover transform transition duration-500 hover:scale-[1.01]">
+                         
+                         <div class="absolute bottom-10 left-[-20px] bg-white/95 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border-l-8 border-orange-500 hidden md:block">
+                             <p class="font-bold text-gray-900 text-xl">Mutlu Bireyler</p>
+                             <p class="text-sm text-gray-500">Güvenli Yarınlar</p>
+                         </div>
                     </div>
-                    <div class="bg-orange-700 text-white p-8 rounded shadow-md">
-                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="eye" class="text-[#3d2715]"></i> Vizyonumuz</h3>
-                        <p class="text-orange-100 text-sm leading-relaxed">Türkiye'de özel eğitim alanında öncü, yenilikçi yaklaşımları uygulayan ve ailelerin güvenle tercih ettiği bir eğitim kurumu olmaktır.</p>
-                    </div>
-                </div>
+                    
+                    <div>
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 leading-tight">
+                            Eğitimde Güvenin ve Sevginin <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">Değişmeyen Adresi</span>
+                        </h2>
+                        
+                        <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                            <p>
+                                Özgüven Özel Eğitim ve Rehabilitasyon Merkezi olarak, <strong>15 yılı aşkın tecrübemizle</strong> özel gereksinimli bireylerin hayatlarına dokunuyor, onların potansiyellerini en üst düzeye çıkarmak için çalışıyoruz.
+                            </p>
+                            <p>
+                                Bilimsel yöntemleri, teknolojik imkanları ve en önemlisi <strong>"koşulsuz sevgiyi"</strong> eğitimin merkezine koyuyoruz. Her bireyin öğrenme hızının ve şeklinin farklı olduğu bilinciyle, kişiye özel eğitim programları hazırlıyor; onları topluma kazandırmayı ve bağımsız bireyler olmalarını sağlamayı hedefliyoruz.
+                            </p>
+                        </div>
 
-                <div id="kadro">
-                    <h2 class="text-2xl font-bold text-[#3d2715] mb-6 border-b pb-2">Eğitim Kadromuz</h2>
-                    <div id="staff-public-list">
-                        <div id="staff-loading" class="text-center py-8 bg-stone-50 rounded border border-dashed border-stone-300">
-                            <div class="animate-spin inline-block w-8 h-8 border-4 border-orange-600 rounded-full border-t-transparent"></div>
-                            <p class="mt-2 text-stone-500 text-sm">Kadro Yükleniyor...</p>
+                        <!-- İstatistikler -->
+                        <div class="grid grid-cols-2 gap-8 mt-10 pt-10 border-t border-gray-100">
+                            <div class="flex items-center gap-5">
+                                <div class="text-5xl font-black text-orange-600">15+</div>
+                                <div class="text-sm font-bold text-gray-400 uppercase tracking-widest leading-tight">Yıllık<br>Tecrübe</div>
+                            </div>
+                            <div class="flex items-center gap-5">
+                                <div class="text-5xl font-black text-orange-600">500+</div>
+                                <div class="text-sm font-bold text-gray-400 uppercase tracking-widest leading-tight">Mezun<br>Öğrenci</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Misyon & Vizyon -->
+                <div id="misyon" class="grid md:grid-cols-2 gap-8">
+                    <!-- Misyon Kartı -->
+                    <div class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 hover:border-orange-300 transition-all duration-300 group relative overflow-hidden hover:-translate-y-2">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full -mr-10 -mt-10 transition-transform group-hover:scale-150"></div>
+                        <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-8 relative z-10 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <i data-lucide="target" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 relative z-10">Misyonumuz</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg relative z-10">
+                            Özel eğitim ihtiyacı olan bireyleri; bedensel, zihinsel, sosyal ve duygusal yönden destekleyerek, potansiyellerini en üst düzeye çıkarmak, toplumla bütünleşmelerini sağlamak ve onları bağımsız bir yaşama hazırlamaktır.
+                        </p>
+                    </div>
+
+                    <!-- Vizyon Kartı -->
+                    <div class="bg-gray-900 text-white p-10 rounded-3xl shadow-xl relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-gray-800 rounded-full -mr-10 -mt-10 transition-transform group-hover:scale-150"></div>
+                        <div class="w-16 h-16 bg-gray-800 text-orange-500 rounded-2xl flex items-center justify-center mb-8 relative z-10 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <i data-lucide="eye" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 relative z-10">Vizyonumuz</h3>
+                        <p class="text-gray-400 leading-relaxed text-lg relative z-10">
+                            Türkiye'de özel eğitim alanında öncü, yenilikçi yaklaşımları ve teknolojiyi eğitime entegre eden, uluslararası standartlarda hizmet sunan ve ailelerin güvenle tercih ettiği lider bir eğitim kurumu olmaktır.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kadro -->
+                <div id="kadro" class="pt-10">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-gray-200 pb-6">
+                        <div>
+                            <span class="text-orange-600 font-bold tracking-widest uppercase text-sm mb-2 block">Uzman Ekibimiz</span>
+                            <h2 class="text-4xl font-extrabold text-gray-900">Eğitim Kadromuz</h2>
+                        </div>
+                        <p class="text-gray-500 max-w-lg text-right hidden md:block text-lg">Alanında uzman, deneyimli ve sürekli kendini geliştiren geniş bir eğitim kadrosuna sahibiz.</p>
+                    </div>
+                    
+                    <div id="staff-public-list">
+                        <div id="staff-loading" class="text-center py-24 bg-white rounded-3xl border border-gray-100 shadow-sm">
+                            <div class="animate-spin inline-block w-14 h-14 border-4 border-orange-500 rounded-full border-t-transparent shadow-lg mb-6"></div>
+                            <p class="text-gray-500 font-bold text-xl">Kadro Yükleniyor...</p>
+                            <p class="text-gray-400 mt-2">Lütfen bekleyiniz.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <footer id="main-footer" class="bg-[#3d2715] mt-auto"></footer>
+    <footer id="main-footer" class="bg-gray-900 mt-auto"></footer>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>
