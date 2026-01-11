@@ -6,41 +6,42 @@
     <title>Blog - Özgüven Özel Eğitim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         @keyframes fadeInUp { from { opacity: 0; transform: translate3d(0, 40px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
     </style>
 </head>
-<body class="bg-stone-50 flex flex-col min-h-screen">
+<body class="bg-gray-50 flex flex-col min-h-screen text-gray-800">
     
     <header id="main-header" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300"></header>
 
     <main class="flex-grow">
-        <!-- Sayfa Başlığı -->
-        <section class="bg-[#3d2715] text-white py-20 relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80')] bg-cover bg-center opacity-20"></div>
+        <!-- Sayfa Başlığı (Canlı Gradient & Görsel) -->
+        <section class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             <div class="container mx-auto px-4 relative z-10 text-center animate-fade-in-up">
-                <h1 class="text-4xl font-extrabold mb-4">Blog & Makaleler</h1>
-                <p class="text-stone-300 max-w-2xl mx-auto text-lg">Özel eğitim dünyasından güncel bilgiler ve tavsiyeler.</p>
+                <h1 class="text-5xl font-black mb-4 drop-shadow-md">Blog & Makaleler</h1>
+                <p class="text-orange-100 max-w-2xl mx-auto text-xl font-medium">Özel eğitim dünyasından güncel bilgiler, uzman tavsiyeleri ve başarı hikayeleri.</p>
             </div>
         </section>
 
         <!-- Blog Grid -->
-        <section class="py-16">
+        <section class="py-20">
             <div class="container mx-auto px-4">
-                <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div id="blog-loading" class="col-span-3 text-center py-12">
-                        <div class="animate-spin inline-block w-10 h-10 border-4 border-orange-600 rounded-full border-t-transparent"></div>
-                        <p class="mt-4 text-stone-500 font-medium">Yazılar Yükleniyor...</p>
+                <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    <div id="blog-loading" class="col-span-3 text-center py-16 bg-white rounded-3xl border border-gray-100 shadow-sm">
+                        <div class="animate-spin inline-block w-12 h-12 border-4 border-orange-500 rounded-full border-t-transparent shadow-md"></div>
+                        <p class="mt-4 text-gray-500 font-medium text-lg">Yazılar Yükleniyor...</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="main-footer" class="bg-[#3d2715] mt-auto"></footer>
+    <footer id="main-footer" class="bg-gray-900 mt-auto"></footer>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>
